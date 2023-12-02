@@ -1,0 +1,16 @@
+version: '3'
+services:
+  client1:
+    image: client1-img
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1024M
+    networks:
+      - webnet
+
+networks:
+  webnet:
